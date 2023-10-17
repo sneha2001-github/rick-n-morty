@@ -5,10 +5,12 @@ import { AuthProvider } from './services/AuthService';
 
 
 function App() {
+
   return (
     <AuthProvider>
       <div className="App">
         <Header />
+       
         <MainPage />
       </div>
     </AuthProvider>

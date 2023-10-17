@@ -4,6 +4,7 @@ import './header.css';
 
 function Header() {
   const { loggedIn, setLoggedIn } = useAuth();
+ 
 
   const handleLogout = () => {
     setLoggedIn(false);
@@ -11,8 +12,9 @@ function Header() {
 
   return (
     <div>
+      {loggedIn &&<button onClick={handleLogout}>Logout</button>}
+  
       <h1>Welcome</h1>
-      {loggedIn && <button onClick={handleLogout}>Logout</button>}
     </div>
   );
 }
