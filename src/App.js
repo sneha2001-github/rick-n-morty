@@ -10,7 +10,6 @@ function App() {
     <AuthProvider>
       <div className="App">
         <Header />
-       
         <MainPage />
       </div>
     </AuthProvider>
@@ -18,4 +17,3 @@ function App() {
 }
 
 export default App;
-

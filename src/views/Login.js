@@ -1,5 +1,8 @@
 import React , { useState,useRef,useEffect}from 'react';
 import { useAuth } from '../services/AuthService';
+import Button from '@mui/material/Button';
+import Grid from '@mui/material/Grid';
+import TextField from '@mui/material/TextField';
 import './login.css';
 
 function Login() {
@@ -8,6 +11,7 @@ function Login() {
     const { setLoggedIn } = useAuth();
     const emailInputRef = useRef();
   
+
     const handleLogin = () => {
       if (email.includes('@') && password.length >= 7) {
         setLoggedIn(true);
@@ -19,23 +23,22 @@ function Login() {
       }, []);
 
   return (
-    <div>
+    <div  style={{display:"flex",justifyContent:"center" ,height:"100vh" ,alignItems:"center"}}>
 
-<div className='form'> 
-      <input className='input'
-        type="text"
-        ref={emailInputRef}
-        placeholder="Email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <input className='input'
-        type="password"
-        placeholder="Password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <button  className ='button'onClick={handleLogin}>Login</button>
+<div className='form' > 
+
+
+<Grid  container spacing={2} display={'flex'} flexDirection={'column'} margin={"auto"} maxWidth={"400px"} >
+  <Grid  item xs={12} >
+    <TextField className='input' fullWidth variant='outlined' ref={emailInputRef} id="outlined-basic" label="email"  type='text' value={email} onChange={(e) => setEmail(e.target.value)}/>
+  </Grid>
+  <Grid item xs={12}>
+  <TextField  fullWidth variant='outlined' id="outlined-basic" label="password" type='password' value={password} onChange={(e) => setPassword(e.target.value)}/>
+  </Grid>
+  <Grid item xs={12}>
+  <Button fullWidth variant="conatined" onClick={handleLogin}>Login</Button>
+  </Grid>
+  </Grid>
       </div>
     </div>
     

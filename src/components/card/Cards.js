@@ -21,8 +21,6 @@ function Cards({data}) {
 
   return (
     <div>
-
-
     <Dialog
     open={open}
     onClose={handleClose}
@@ -35,9 +33,9 @@ function Cards({data}) {
     </DialogActions>
   </Dialog>
         
-<Card sx={{ maxWidth: 345 }}>
+<Card sx={{ maxWidth: 345 , margin:"auto"}}>
       <CardActionArea>
-        <CardMedia
+        <CardMedia 
           component="img"
           height="280"
           image={data?.image}

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useAuth } from '../services/AuthService';
-import RickAndMorty from '../components/RickandMorty';
+import RickAndMorty from '../services/RickandMorty';
 import Login from './Login';
 
 
